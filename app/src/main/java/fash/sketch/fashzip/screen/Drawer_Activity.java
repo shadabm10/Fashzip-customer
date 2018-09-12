@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
@@ -38,6 +39,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 
 
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -92,6 +94,7 @@ public class Drawer_Activity extends AppCompatActivity {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     BottomNavigation bottomNavigation;
+    RelativeLayout rl_cart_notification;
 
 
     @SuppressLint("CutPasteId")
@@ -123,7 +126,8 @@ public class Drawer_Activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         tooltext = toolbar.findViewById(R.id.toolbar_title);
-    //    toolbar_image =  toolbar.findViewById(R.id.toolbar_image);
+        rl_cart_notification = toolbar.findViewById(R.id.rl_cart_notification);
+
        
 
         // Find our drawer view
@@ -181,6 +185,14 @@ public class Drawer_Activity extends AppCompatActivity {
         toggle.syncState();
 
         bottomNavBar();
+
+        rl_cart_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Drawer_Activity.this,CartScreen.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import fash.sketch.fashzip.R;
+import fash.sketch.fashzip.screen.ProductDetailScreen;
 
 /**
  * Created by Developer on 9/11/18.
@@ -65,14 +66,15 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.MyView
                 fit().into(holder.image);
 
 
-/*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(context, ProductDetailScreen.class);
+                context.startActivity(intent);
 
             }
-        });*/
+        });
     }
 
     @Override

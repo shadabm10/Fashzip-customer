@@ -24,12 +24,16 @@
         <activity android:name=".screen.LoginScreen"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
 
-
         <activity android:name=".screen.Signup"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
 
-
         <activity android:name=".screen.Drawer_Activity"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.ProductDetailScreen"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.CartScreen"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
 
 
