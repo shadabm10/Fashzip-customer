@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <group
+        android:id="@+id/grp_1"
+        android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_Women"
+            android:title="Women"
+            android:icon="@mipmap/nav_women_96"
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/nav_Men"
+            android:title="Men"
+            android:icon="@mipmap/nav_man_96"
+            />
+        <item
+            android:id="@+id/nav_Girls"
+            android:title="Girls"
+            android:icon="@mipmap/nav_girls_96"
+            />
+        <item
+            android:id="@+id/nav_Boys"
+            android:title="Boys"
+            android:icon="@mipmap/nav_boy_96"
+            />
+        <item
+            android:id="@+id/nav_Kids"
+            android:title="Kids"
+            android:icon="@mipmap/nav_kids_96"
+            />
+
+
+    </group>
+
+    <group
+        android:id="@+id/grp_2"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_My_Wallet"
+            android:title="My Wallet"
+            android:icon="@mipmap/nav_wallet_96"
+            />
+
+        <item
+            android:id="@+id/nav_My_Order"
+            android:title="My Order"
+            android:icon="@mipmap/nav_order_hist_96"
+            />
+        <item
+            android:id="@+id/nav_Reviews"
+            android:title="Reviews"
+            android:icon="@mipmap/nav_review_96"
+            />
+        <item
+            android:id="@+id/nav_Support"
+            android:title="Support"
+            android:icon="@mipmap/nav_support_96"
+            />
+        <item
+            android:id="@+id/nav_Logout"
+            android:title="Logout"
+            android:icon="@mipmap/nav_logout_96"
+            />
+
+
+    </group>
+
+
+</menu>

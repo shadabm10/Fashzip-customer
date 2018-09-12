@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FashZip</string>
+    <string name="already_have_an_account">Already have an account? <font color="#ffd437"><b>Login</b></font></string>
+    <string name="signup_for_new_account">Don\'t have an account? <font color="#ffd437"><b>Register</b></font></string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="follow">Follow and share all social medias for up to a <font color="#FF0000">25%\ndiscount</font> on shipping as well as earn points that\ngoes towards shopping.</string>
+</resources>
