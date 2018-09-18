@@ -46,6 +46,7 @@ public class ProductDetailScreen extends AppCompatActivity {
     TextView tv_product_price,tv_product_name,tv_product_capacity,tv_product_description_1;
     String product_id;
     String qty_order;
+    RelativeLayout rl_add_to_cart;
   //  ImageView img_previous,img_next;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +69,8 @@ public class ProductDetailScreen extends AppCompatActivity {
         rl_cart_notification =  findViewById(R.id.rl_cart_notification);
         cart_badge =  findViewById(R.id.cart_badge);
 
+        rl_add_to_cart =  findViewById(R.id.rl_add_to_cart);
+
         toolbar_title.setVisibility(View.VISIBLE);
         toolbar_back.setVisibility(View.VISIBLE);
     //    toolbar_logo.setVisibility(View.GONE);
@@ -82,6 +85,14 @@ public class ProductDetailScreen extends AppCompatActivity {
         });
 
         rl_cart_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductDetailScreen.this,CartScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        rl_add_to_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProductDetailScreen.this,CartScreen.class);

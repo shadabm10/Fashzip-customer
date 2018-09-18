@@ -79,9 +79,9 @@ public class Drawer_Activity extends AppCompatActivity {
     private ActionBarDrawerToggle drawerToggle;
 
     Fragment fragment = null;
-    TextView tooltext;
+    TextView tooltext,toolbar_edit,toolbar_save;
 
-    ImageView toolbar_image;
+    ImageView toolbar_image,toolbar_notification;
     FragmentTransaction transaction;
 /*
     Global_Class global_class;
@@ -127,6 +127,11 @@ public class Drawer_Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         tooltext = toolbar.findViewById(R.id.toolbar_title);
         rl_cart_notification = toolbar.findViewById(R.id.rl_cart_notification);
+        toolbar_edit = toolbar.findViewById(R.id.toolbar_edit);
+        toolbar_save = toolbar.findViewById(R.id.toolbar_save);
+        toolbar_notification = toolbar.findViewById(R.id.toolbar_notification);
+
+
 
        
 
@@ -194,6 +199,14 @@ public class Drawer_Activity extends AppCompatActivity {
             }
         });
 
+        toolbar_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Drawer_Activity.this,NotificationScreen.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -203,18 +216,38 @@ public class Drawer_Activity extends AppCompatActivity {
             public void onSelectedItemChanged(int itemId) {
                 switch (itemId){
                     case R.id.tab_home:
+                        tooltext.setText("Home");
+                        rl_cart_notification.setVisibility(View.VISIBLE);
+                        toolbar_edit.setVisibility(View.GONE);
+                        toolbar_save.setVisibility(View.GONE);
+                        toolbar_notification.setVisibility(View.VISIBLE);
                         transaction=getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.flContent,new FragmentHome());
                         break;
                     case R.id.tab_search:
+                        tooltext.setText("Search");
+                        rl_cart_notification.setVisibility(View.VISIBLE);
+                        toolbar_edit.setVisibility(View.GONE);
+                        toolbar_save.setVisibility(View.GONE);
+                        toolbar_notification.setVisibility(View.VISIBLE);
                         transaction=getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.flContent,new FragmentSearch());
                         break;
                     case R.id.tab_order:
+                        tooltext.setText("Orders");
+                        rl_cart_notification.setVisibility(View.VISIBLE);
+                        toolbar_edit.setVisibility(View.GONE);
+                        toolbar_save.setVisibility(View.GONE);
+                        toolbar_notification.setVisibility(View.VISIBLE);
                         transaction=getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.flContent,new FragmentOrder());
                         break;
                     case R.id.tab_profile:
+                        tooltext.setText("My Profile");
+                        rl_cart_notification.setVisibility(View.GONE);
+                        toolbar_edit.setVisibility(View.VISIBLE);
+                        toolbar_save.setVisibility(View.GONE);
+                        toolbar_notification.setVisibility(View.GONE);
                         transaction=getSupportFragmentManager().beginTransaction();
                         transaction.replace(R.id.flContent,new FragmentProfile());
                         break;
@@ -269,50 +302,93 @@ public class Drawer_Activity extends AppCompatActivity {
 
         switch (menuItem.getItemId()) {
             case R.id.nav_Women:
-
+                tooltext.setText("Women");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
                 fragment = new Frg_Women();
 
                 break;
             case R.id.nav_Men:
+                tooltext.setText("Men");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
                 fragment = new Frg_Women();
                 //fragment = new Frg_Men();
 
                 break;
             case R.id.nav_Girls:
+                tooltext.setText("Girls");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
                 fragment = new Frg_Women();
                // fragment = new Frg_Girls();
 
                 break;
 
             case R.id.nav_Boys:
+                tooltext.setText("Boys");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
                 fragment = new Frg_Women();
                // fragment = new Frg_Boys();
 
                 break;
             case R.id.nav_Kids:
+                tooltext.setText("Kids");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
                 fragment = new Frg_Women();
                // fragment = new Frg_Kids();
 
                 break;
 
             case R.id.nav_My_Wallet:
+                tooltext.setText("My Wallet");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
 
                 fragment = new Frg_My_Wallet();
 
                 break;
 
             case R.id.nav_My_Order:
+                tooltext.setText("My Order");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
               
                 fragment = new FragmentOrder();
              
                 break;
             case R.id.nav_Reviews:
-
+                tooltext.setText("My Reviews");
+                rl_cart_notification.setVisibility(View.VISIBLE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.VISIBLE);
                 fragment = new Frg_Reviews();
 
                 break;
 
             case R.id.nav_Support:
+                tooltext.setText("Support");
+                rl_cart_notification.setVisibility(View.GONE);
+                toolbar_edit.setVisibility(View.GONE);
+                toolbar_save.setVisibility(View.GONE);
+                toolbar_notification.setVisibility(View.GONE);
 
                 fragment = new Frg_Support();
 

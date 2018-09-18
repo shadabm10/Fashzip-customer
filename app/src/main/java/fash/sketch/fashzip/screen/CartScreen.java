@@ -43,7 +43,7 @@ public class CartScreen extends AppCompatActivity {
     ProgressDialog pd;
    // Shared_Preference prefrence;
     ImageView toolbar_back,toolbar_logo,toolbar_clock;
-    TextView toolbar_title,tv_payable_amount,tv_error_msg,tv_delivery_time;
+    TextView toolbar_title,tv_proceed,tv_error_msg,tv_delivery_time;
 
     AdapterCart adapterCart;
 
@@ -55,9 +55,6 @@ public class CartScreen extends AppCompatActivity {
 
    // ArrayList<HashMap<String,String>> cart_list;
     ArrayList<String> cart_list;
-
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,9 +68,6 @@ public class CartScreen extends AppCompatActivity {
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setMessage("Loading");
 
-
-
-
         cart_list = new ArrayList<>();
 
         cart_list.add("Jeans");
@@ -84,14 +78,11 @@ public class CartScreen extends AppCompatActivity {
         cart_list.add("Shoes");
 
 
-
-
         toolbar_title = findViewById(R.id.toolbar_title);
         toolbar_back = findViewById(R.id.toolbar_back);
-
+        tv_proceed = findViewById(R.id.tv_proceed);
 
         toolbar_title.setText("My Cart");
-
         toolbar_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,39 +90,23 @@ public class CartScreen extends AppCompatActivity {
             }
         });
 
-
-
-        /////////////////////////////////////////////////////////////////////
-     /*   Intent intent = CartScreen.this.getIntent();
-        Log.d(TAG, "re: "+getIntent().getStringExtra("source"));*/
-
-
-
-
         rv_cart_list = findViewById(R.id.rv_cart_list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         rv_cart_list.setLayoutManager(mLayoutManager);
-       // recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-
-
 
         adapterCart = new AdapterCart(CartScreen.this, cart_list);
         rv_cart_list.setAdapter(adapterCart);
 
-
-
+        tv_proceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CartScreen.this,AddressScreen.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
-
-
-
-
-
-
-
-
 
 
 }

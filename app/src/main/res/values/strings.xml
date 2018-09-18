@@ -5,5 +5,16 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
+    <string name="thanks_for_shopping">FOR TAKING THE TIME\nTO SHOP WHIT US</string>
+    <string name="sl_no">Sl no.</string>
+    <string name="product">Product</string>
+    <string name="description">Description</string>
+
+    <string name="qty">Qty</string>
+    <string name="price">Price</string>
+    <string name="address">50, Sketch Web Solutions\nD.H.Road,\nKolkata - 700104</string>
+    <string name="sample_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </string>
+
+
     <string name="follow">Follow and share all social medias for up to a <font color="#FF0000">25%\ndiscount</font> on shipping as well as earn points that\ngoes towards shopping.</string>
 </resources>

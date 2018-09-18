@@ -1,27 +1,25 @@
 package fash.sketch.fashzip.adapter;
 
 import android.content.Context;
-
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 import fash.sketch.fashzip.R;
+import fash.sketch.fashzip.screen.OrderDetailScreen;
 
 
-public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
+public class AdapterOrders extends RecyclerView.Adapter<AdapterOrders.ViewHolder>  {
 
     Context context;
     //ArrayList<HashMap<String,String>> cart_list;
@@ -35,10 +33,9 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
     String TAG = "adapter_cart";
 
 
-    List<String> list = new ArrayList<>();
-    List<String> list_qty= new ArrayList<>();
 
-    public AdapterCart(Context c, ArrayList<String> cart_list ) {
+
+    public AdapterOrders(Context c, ArrayList<String> cart_list ) {
         this.mInflater = LayoutInflater.from(c);
         context = c;
         this.cart_list = cart_list;
@@ -46,27 +43,12 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
 
        // globalClass = (GlobalClass)context.getApplicationContext();
 
-        list = new ArrayList<>();
-
-        list.add("XS");
-        list.add("S");
-        list.add("M");
-        list.add("L");
-        list.add("XL");
-        list.add("XXL");
-
-        list_qty.add("1");
-        list_qty.add("2");
-        list_qty.add("3");
-        list_qty.add("4");
-        list_qty.add("5");
-        list_qty.add("6");
 
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.single_row_cart, parent, false);
+        View view = mInflater.inflate(R.layout.single_row_order, parent, false);
         return new ViewHolder(view);
     }
 
@@ -76,10 +58,17 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
 
 
 
-        spinner_size(holder);
-        spinner_qty(holder);
 
         holder.tv_product_name.setText(cart_list.get(position));
+
+        holder.img_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,OrderDetailScreen.class);
+                intent.putExtra("position",position);
+                context.startActivity(intent);
+            }
+        });
 
        /* SpannableString mySpannableString = new SpannableString(context.getResources().getString(R.string.Qty)
                 +" "+cart_list.get(position).get("qty")
@@ -96,14 +85,7 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
 */
 /*
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context,ProductDetailScreen.class);
-                intent.putExtra("position",position);
-                context.startActivity(intent);
-            }
-        });
+
 */
 
 
@@ -121,9 +103,9 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
            implements View.OnClickListener {
 
 
-       ImageView img_product;
+       ImageView img_product,img_arrow;
        TextView tv_product_name,tv_product_des,tv_product_price,tv_product_id;
-       Spinner spinner_qty,spinner_size;
+
 
        ViewHolder(View itemView) {
            super(itemView);
@@ -133,8 +115,8 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
            tv_product_name = itemView.findViewById(R.id.tv_product_name);
            tv_product_des = itemView.findViewById(R.id.tv_product_des);
            tv_product_price = itemView.findViewById(R.id.tv_product_price);
-           spinner_qty = itemView.findViewById(R.id.spinner_qty);
-           spinner_size = itemView.findViewById(R.id.spinner_size);
+           img_arrow = itemView.findViewById(R.id.img_arrow);
+
 
 
 
@@ -157,56 +139,6 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.ViewHolder>  {
 
 
 
-    private void spinner_size(final ViewHolder holder){
 
-        ArrayAdapter<String> adp = new ArrayAdapter<String>
-                (context, android.R.layout.simple_spinner_item, list);
-        holder.spinner_size.setAdapter(adp);
-
-        holder.spinner_size.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            //@Override
-            public void onItemSelected(AdapterView<?> parent, View arg1, int arg2, long arg3) {
-                // TODO Auto-generated method stub
-                String item = holder.spinner_qty.getItemAtPosition(0).toString();
-                //Toast.makeText(spinner.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-                //qty_order=holder.spinner_qty.getSelectedItem().toString();
-            }
-
-
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-
-            }
-        });
-
-
-    }
-
-    private void spinner_qty(final ViewHolder holder){
-
-        ArrayAdapter<String> adp = new ArrayAdapter<String>
-                (context, android.R.layout.simple_spinner_item, list_qty);
-        holder.spinner_qty.setAdapter(adp);
-
-        holder.spinner_qty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            //@Override
-            public void onItemSelected(AdapterView<?> parent, View arg1, int arg2, long arg3) {
-                // TODO Auto-generated method stub
-                String item = holder.spinner_qty.getItemAtPosition(0).toString();
-                //Toast.makeText(spinner.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-                //qty_order=holder.spinner_qty.getSelectedItem().toString();
-            }
-
-
-            public void onNothingSelected(AdapterView<?> arg0) {
-                // TODO Auto-generated method stub
-
-            }
-        });
-
-
-    }
 
 }

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -26,6 +27,7 @@ public class LoginScreen extends AppCompatActivity {
     EditText input_email,input_password;
     ProgressDialog pd;
     String device_id;
+    RelativeLayout rl_login;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,23 +35,23 @@ public class LoginScreen extends AppCompatActivity {
 
       /*  globalClass = (Global_Class)getApplicationContext();
         prefrence = new Shared_Prefrence(LoginScreen.this);
-        prefrence.loadPrefrence();*/
+        prefrence.loadPrefrence();
         pd=new ProgressDialog(LoginScreen.this);
         pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         pd.setMessage("Loading...");
 
-     //   device_id = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
+        device_id = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
         Log.d(TAG, "device_id: "+device_id);
-     //   globalClass.setDeviceid(device_id);
+        globalClass.setDeviceid(device_id);*/
 
         input_email = findViewById(R.id.input_email);
         input_password = findViewById(R.id.input_password);
         tv_sign_up =  findViewById(R.id.tv_sign_up);
-        tv_login =  findViewById(R.id.tv_login);
+        rl_login =  findViewById(R.id.rl_login);
         tv_forget_pass =  findViewById(R.id.tv_forget_pass);
 
 
-        tv_login.setOnClickListener(new View.OnClickListener() {
+        rl_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginScreen.this, Drawer_Activity.class);

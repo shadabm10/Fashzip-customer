@@ -36,6 +36,27 @@
         <activity android:name=".screen.CartScreen"
             android:windowSoftInputMode="adjustPan|stateHidden"/>
 
+        <activity android:name=".screen.OrderDetailScreen"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.PlacedOrderDetails"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.AddressScreen"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.AddNewAddressScreen"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.PaymentScreen"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.CategoryScreen"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
+        <activity android:name=".screen.NotificationScreen"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
+
 
 
 

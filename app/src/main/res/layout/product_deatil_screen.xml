@@ -115,6 +115,12 @@
 
                 />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/shirt_image"
+                android:scaleType="fitXY"
+                />
 
 
 
@@ -125,6 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
+            android:layout_marginTop="10dp"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp"
             android:gravity="start"/>
@@ -186,6 +193,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/rl_add_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -227,6 +235,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_below="@+id/view_2">
 
 
@@ -236,17 +245,17 @@
                 android:layout_height="wrap_content"
                 android:text="Product Description"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:gravity="start"/>
             <TextView
                 android:id="@+id/tv_product_description_1"
                 android:layout_below="@+id/tv_product_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:text="@string/sample_text"
                 android:textColor="@color/dark_grey"
                 android:textSize="14sp"
-
+                android:layout_marginTop="5dp"
                 android:gravity="start"/>
 
         </RelativeLayout>

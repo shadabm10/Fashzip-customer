@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/grey"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+
+        <ImageView
+            android:id="@+id/toolbar_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@mipmap/back96"
+            android:padding="7dp"
+            android:contentDescription="@string/app_name"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+           
+            android:layout_gravity="start"
+            android:tint="@color/white"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp" />
+
+
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:text="Add Address"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/rl_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:hint="Pin Code"
+                        android:backgroundTint="@color/grey"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_grey"
+                        />
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:hint="Locality / Town"
+                        android:backgroundTint="@color/grey"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_grey"
+                        />
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:hint="City / District"
+                        android:backgroundTint="@color/grey"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_grey"
+                        />
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:hint="State"
+                        android:backgroundTint="@color/grey"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_grey"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:hint="Name"
+                        android:backgroundTint="@color/grey"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_grey"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:padding="10dp"
+                        android:background="@drawable/stroke_grey">
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:hint="Address"
+                        android:gravity="start"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_grey"
+                        />
+                    </RelativeLayout>
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:hint="Mobile"
+                        android:backgroundTint="@color/grey"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/dark_grey"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/opacity_black"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/tv_proceed"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:text="CANCEL"
+            android:textColor="@color/white"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+           
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/black"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_margin="10dp"
+            />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
